@@ -15,4 +15,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-java -cp lib/zooinspector-3.4.14.jar;lib/log4j-1.2.17.jar;lib/zookeeper-3.4.14.jar;lib/jtoaster-1.0.4.jar;lib/slf4j-api-1.7.25.jar;lib/slf4j-log4j12-1.7.25.jar;lib/log4j-1.2.17.jar;lib -Dlog4j.configuration=file:"conf/log4j.properties" org.apache.zookeeper.inspector.ZooInspector
+START /B java -cp lib/zooinspector-3.4.14.jar;lib/log4j-1.2.17.jar;lib/zookeeper-3.4.14.jar;lib/jtoaster-1.0.4.jar;lib/slf4j-api-1.7.25.jar;lib/slf4j-log4j12-1.7.25.jar;lib/log4j-1.2.17.jar;lib -Dlog4j.configuration=file:"conf/log4j.properties" org.apache.zookeeper.inspector.ZooInspector
