@@ -15,4 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-nohup java -cp lib/zooinspector-3.4.14.jar:lib/log4j-1.2.17.jar:lib/zookeeper-3.4.14.jar:lib/jtoaster-1.0.4.jar:lib/slf4j-api-1.7.25.jar:lib/slf4j-log4j12-1.7.25.jar:lib/log4j-1.2.17.jar:lib -Dlog4j.configuration=file:"conf/log4j.properties" org.apache.zookeeper.inspector.ZooInspector 2>&1 > zooInspector.log &
+# Get the path to the directory containing this script
+SCRIPT_DIR=$(dirname "$0")
+
+# Get the path to the uber jar for this tool
+# (Requires "mvn install" or "mvn package" be run first)
+JAVA_LIB=`ls ${SCRIPT_DIR}/zookeeper-contrib-zooinspector-*-jar-with-dependencies.jar`
+
+nohup java -jar "${JAVA_LIB}" 2>&1 > $SCRIPT_DIR/zooInspector.log &
